@@ -2,6 +2,8 @@ import React from 'react'
 import Filters from './../components/Filters'
 import Events from './../components/Events'
 import NewEvent from './../components/NewEvent'
+import Config from '../Config'
+import axios from 'axios'
 
 export default class EventsApp extends React.Component {
 
@@ -16,6 +18,7 @@ export default class EventsApp extends React.Component {
             activeExceptions: [],
 
             isNewEventOpen: false,
+            isLoading: false,
 
             results: []
         }
@@ -55,9 +58,22 @@ export default class EventsApp extends React.Component {
         }
     }
 
-    onCancelNewEvent = () => {
+    onCloseNewEvent = () => {
         this.setState({ isNewEventOpen: false })
     }
+
+    onFormNewEventSubmit = (data) => {
+        this.setState({ isLoading: true })
+        axios.post(`${Config.getApiUrl()}create`, data).then((res) => {
+            this.updateResults(res.data).then(_ => this.setState({ isLoading: false }))
+        })
+    }
+
+    updateResults(data) {
+
+    }
+
+
 
     render() {
         return (
@@ -83,7 +99,8 @@ export default class EventsApp extends React.Component {
                             <NewEvent
                                 genres={this.state.genres}
                                 artists={this.state.artists}
-                                onCancelNewEvent={this.onCancelNewEvent}
+                                onFormNewEventSubmit={this.onFormNewEventSubmit}
+                                onCloseNewEvent={this.onCloseNewEvent}
                             />
                             :
                             <div>

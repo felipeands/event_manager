@@ -8,6 +8,7 @@ export default class NewEvent extends React.Component {
 
         this.state = {
             artists: [],
+            genres: [],
             formData: {
                 event_type: 'concert',
                 genre: '',
@@ -55,11 +56,19 @@ export default class NewEvent extends React.Component {
         this.setState({ formData: formData })
     }
 
-    handleGenreSelectChange = (selectedOption) => {
-        const selectedGenreId = parseInt(selectedOption.target.value)
-        let formData = { ... this.state.formData }
-        formData.genre = selectedGenreId
-        this.setState({ formData: formData })
+    handleGenreToggle(el, genre) {
+        el.preventDefault()
+
+        // check if selected genre exists in genres array
+        if (this.state.genres.includes(genre)) {
+            // remove from selected genres list
+            const genres = this.state.genres.filter((stateGenre) => stateGenre !== genre)
+            this.setState({ genres })
+        } else {
+            // include selected genre
+            const genres = [... this.state.genres, genre]
+            this.setState({ genres })
+        }
     }
 
     handleArtistAdd = (el) => {
@@ -78,6 +87,12 @@ export default class NewEvent extends React.Component {
 
     handleFormSubmit = (el) => {
         el.preventDefault()
+
+        const artists = this.state.artists.map((artist) => artist.id)
+        const genres = this.state.genres.map((genre) => genre.id)
+
+        const data = { ... this.state.formData, artists: artists, genres: genres }
+        this.props.onFormNewEventSubmit(data)
     }
 
     handleRemoveArtist(el, artist) {
@@ -111,6 +126,7 @@ export default class NewEvent extends React.Component {
         return (this.state.selectedArtist !== '')
     }
 
+
     render() {
         return (
             <div className="new_event_form">
@@ -129,18 +145,15 @@ export default class NewEvent extends React.Component {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="genre">Genre: </label>
-                    <select
-                        name="genre"
-                        id="genre"
-                        className="form-control"
-                        value={this.state.formData.genre}
-                        onChange={this.handleGenreSelectChange}>
-                        <option value=""></option>
+                    <label htmlFor="genre">Genres: </label>
+                    <div className="genres">
                         {this.props.genres.map((genre, key) =>
-                            <option key={key} value={genre.id}>{genre.name}</option>
+                            <div
+                                key={key}
+                                className={`btn genre ${(this.state.genres.includes(genre) ? 'active' : '')}`}
+                                onClick={(e) => this.handleGenreToggle(e, genre)}>{genre.name}</div>
                         )}
-                    </select>
+                    </div>
                 </div>
 
                 <div className="form-group">
@@ -184,7 +197,7 @@ export default class NewEvent extends React.Component {
 
                 <div className="btns">
                     <button className="btn" onClick={this.handleFormSubmit}>Create</button>
-                    <a className="btn cancel" onClick={this.props.onCancelNewEvent}>Cancel</a>
+                    <a className="btn cancel" onClick={this.props.onCloseNewEvent}>Cancel</a>
                 </div>
 
             </div >
