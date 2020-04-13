@@ -1,0 +1,280 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData @babel/core
+20 silly mapToRegistry name @babel/core
+21 silly mapToRegistry scope (from package name) @babel
+22 verbose mapToRegistry no registry URL found in name for scope @babel
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry https://registry.npmjs.org/
+25 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fcore
+26 silly fetchNamedPackageData @babel/plugin-proposal-class-properties
+27 silly mapToRegistry name @babel/plugin-proposal-class-properties
+28 silly mapToRegistry scope (from package name) @babel
+29 verbose mapToRegistry no registry URL found in name for scope @babel
+30 silly mapToRegistry using default registry
+31 silly mapToRegistry registry https://registry.npmjs.org/
+32 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fplugin-proposal-class-properties
+33 silly fetchNamedPackageData @babel/plugin-proposal-decorators
+34 silly mapToRegistry name @babel/plugin-proposal-decorators
+35 silly mapToRegistry scope (from package name) @babel
+36 verbose mapToRegistry no registry URL found in name for scope @babel
+37 silly mapToRegistry using default registry
+38 silly mapToRegistry registry https://registry.npmjs.org/
+39 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fplugin-proposal-decorators
+40 silly fetchNamedPackageData @babel/plugin-proposal-do-expressions
+41 silly mapToRegistry name @babel/plugin-proposal-do-expressions
+42 silly mapToRegistry scope (from package name) @babel
+43 verbose mapToRegistry no registry URL found in name for scope @babel
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npmjs.org/
+46 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fplugin-proposal-do-expressions
+47 silly fetchNamedPackageData @babel/plugin-proposal-export-default-from
+48 silly mapToRegistry name @babel/plugin-proposal-export-default-from
+49 silly mapToRegistry scope (from package name) @babel
+50 verbose mapToRegistry no registry URL found in name for scope @babel
+51 silly mapToRegistry using default registry
+52 silly mapToRegistry registry https://registry.npmjs.org/
+53 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fplugin-proposal-export-default-from
+54 silly fetchNamedPackageData @babel/plugin-proposal-export-namespace-from
+55 silly mapToRegistry name @babel/plugin-proposal-export-namespace-from
+56 silly mapToRegistry scope (from package name) @babel
+57 verbose mapToRegistry no registry URL found in name for scope @babel
+58 silly mapToRegistry using default registry
+59 silly mapToRegistry registry https://registry.npmjs.org/
+60 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fplugin-proposal-export-namespace-from
+61 silly fetchNamedPackageData @babel/plugin-proposal-function-bind
+62 silly mapToRegistry name @babel/plugin-proposal-function-bind
+63 silly mapToRegistry scope (from package name) @babel
+64 verbose mapToRegistry no registry URL found in name for scope @babel
+65 silly mapToRegistry using default registry
+66 silly mapToRegistry registry https://registry.npmjs.org/
+67 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fplugin-proposal-function-bind
+68 silly fetchNamedPackageData @babel/plugin-proposal-function-sent
+69 silly mapToRegistry name @babel/plugin-proposal-function-sent
+70 silly mapToRegistry scope (from package name) @babel
+71 verbose mapToRegistry no registry URL found in name for scope @babel
+72 silly mapToRegistry using default registry
+73 silly mapToRegistry registry https://registry.npmjs.org/
+74 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fplugin-proposal-function-sent
+75 silly fetchNamedPackageData @babel/plugin-proposal-json-strings
+76 silly mapToRegistry name @babel/plugin-proposal-json-strings
+77 silly mapToRegistry scope (from package name) @babel
+78 verbose mapToRegistry no registry URL found in name for scope @babel
+79 silly mapToRegistry using default registry
+80 silly mapToRegistry registry https://registry.npmjs.org/
+81 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fplugin-proposal-json-strings
+82 silly fetchNamedPackageData @babel/plugin-proposal-logical-assignment-operators
+83 silly mapToRegistry name @babel/plugin-proposal-logical-assignment-operators
+84 silly mapToRegistry scope (from package name) @babel
+85 verbose mapToRegistry no registry URL found in name for scope @babel
+86 silly mapToRegistry using default registry
+87 silly mapToRegistry registry https://registry.npmjs.org/
+88 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fplugin-proposal-logical-assignment-operators
+89 silly fetchNamedPackageData @babel/plugin-proposal-optional-chaining
+90 silly mapToRegistry name @babel/plugin-proposal-optional-chaining
+91 silly mapToRegistry scope (from package name) @babel
+92 verbose mapToRegistry no registry URL found in name for scope @babel
+93 silly mapToRegistry using default registry
+94 silly mapToRegistry registry https://registry.npmjs.org/
+95 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fplugin-proposal-optional-chaining
+96 silly fetchNamedPackageData @babel/plugin-proposal-pipeline-operator
+97 silly mapToRegistry name @babel/plugin-proposal-pipeline-operator
+98 silly mapToRegistry scope (from package name) @babel
+99 verbose mapToRegistry no registry URL found in name for scope @babel
+100 silly mapToRegistry using default registry
+101 silly mapToRegistry registry https://registry.npmjs.org/
+102 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fplugin-proposal-pipeline-operator
+103 silly fetchNamedPackageData @babel/plugin-proposal-throw-expressions
+104 silly mapToRegistry name @babel/plugin-proposal-throw-expressions
+105 silly mapToRegistry scope (from package name) @babel
+106 verbose mapToRegistry no registry URL found in name for scope @babel
+107 silly mapToRegistry using default registry
+108 silly mapToRegistry registry https://registry.npmjs.org/
+109 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fplugin-proposal-throw-expressions
+110 silly fetchNamedPackageData @babel/plugin-syntax-dynamic-import
+111 silly mapToRegistry name @babel/plugin-syntax-dynamic-import
+112 silly mapToRegistry scope (from package name) @babel
+113 verbose mapToRegistry no registry URL found in name for scope @babel
+114 silly mapToRegistry using default registry
+115 silly mapToRegistry registry https://registry.npmjs.org/
+116 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fplugin-syntax-dynamic-import
+117 silly fetchNamedPackageData @babel/plugin-syntax-import-meta
+118 silly mapToRegistry name @babel/plugin-syntax-import-meta
+119 silly mapToRegistry scope (from package name) @babel
+120 verbose mapToRegistry no registry URL found in name for scope @babel
+121 silly mapToRegistry using default registry
+122 silly mapToRegistry registry https://registry.npmjs.org/
+123 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fplugin-syntax-import-meta
+124 silly fetchNamedPackageData @babel/plugin-syntax-jsx
+125 silly mapToRegistry name @babel/plugin-syntax-jsx
+126 silly mapToRegistry scope (from package name) @babel
+127 verbose mapToRegistry no registry URL found in name for scope @babel
+128 silly mapToRegistry using default registry
+129 silly mapToRegistry registry https://registry.npmjs.org/
+130 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fplugin-syntax-jsx
+131 silly fetchNamedPackageData @babel/preset-env
+132 silly mapToRegistry name @babel/preset-env
+133 silly mapToRegistry scope (from package name) @babel
+134 verbose mapToRegistry no registry URL found in name for scope @babel
+135 silly mapToRegistry using default registry
+136 silly mapToRegistry registry https://registry.npmjs.org/
+137 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fpreset-env
+138 silly fetchNamedPackageData @babel/preset-react
+139 silly mapToRegistry name @babel/preset-react
+140 silly mapToRegistry scope (from package name) @babel
+141 verbose mapToRegistry no registry URL found in name for scope @babel
+142 silly mapToRegistry using default registry
+143 silly mapToRegistry registry https://registry.npmjs.org/
+144 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fpreset-react
+145 silly fetchNamedPackageData babel-loader
+146 silly mapToRegistry name babel-loader
+147 silly mapToRegistry using default registry
+148 silly mapToRegistry registry https://registry.npmjs.org/
+149 silly mapToRegistry uri https://registry.npmjs.org/babel-loader
+150 silly fetchNamedPackageData html-webpack-plugin
+151 silly mapToRegistry name html-webpack-plugin
+152 silly mapToRegistry using default registry
+153 silly mapToRegistry registry https://registry.npmjs.org/
+154 silly mapToRegistry uri https://registry.npmjs.org/html-webpack-plugin
+155 silly fetchNamedPackageData style-loader
+156 silly mapToRegistry name style-loader
+157 silly mapToRegistry using default registry
+158 silly mapToRegistry registry https://registry.npmjs.org/
+159 silly mapToRegistry uri https://registry.npmjs.org/style-loader
+160 silly fetchNamedPackageData webpack
+161 silly mapToRegistry name webpack
+162 silly mapToRegistry using default registry
+163 silly mapToRegistry registry https://registry.npmjs.org/
+164 silly mapToRegistry uri https://registry.npmjs.org/webpack
+165 silly fetchNamedPackageData webpack-cli
+166 silly mapToRegistry name webpack-cli
+167 silly mapToRegistry using default registry
+168 silly mapToRegistry registry https://registry.npmjs.org/
+169 silly mapToRegistry uri https://registry.npmjs.org/webpack-cli
+170 silly fetchNamedPackageData webpack-dev-server
+171 silly mapToRegistry name webpack-dev-server
+172 silly mapToRegistry using default registry
+173 silly mapToRegistry registry https://registry.npmjs.org/
+174 silly mapToRegistry uri https://registry.npmjs.org/webpack-dev-server
+175 verbose request uri https://registry.npmjs.org/@babel%2fplugin-proposal-class-properties
+176 verbose request no auth needed
+177 info attempt registry request try #1 at 6:43:17 PM
+178 verbose request id 6e952292308c00d9
+179 verbose etag W/"d421dd4ac69c8282d310f14b52b9f98e"
+180 verbose lastModified Sun, 12 Jan 2020 00:17:46 GMT
+181 http request GET https://registry.npmjs.org/@babel%2fplugin-proposal-class-properties
+182 verbose request uri https://registry.npmjs.org/@babel%2fplugin-proposal-decorators
+183 verbose request no auth needed
+184 info attempt registry request try #1 at 6:43:17 PM
+185 verbose etag W/"5ee9ce7b697e67e8df49d9348ebdf551"
+186 verbose lastModified Sun, 12 Jan 2020 00:17:47 GMT
+187 http request GET https://registry.npmjs.org/@babel%2fplugin-proposal-decorators
+188 verbose request uri https://registry.npmjs.org/@babel%2fplugin-proposal-do-expressions
+189 verbose request no auth needed
+190 info attempt registry request try #1 at 6:43:17 PM
+191 verbose etag W/"b2c499ea53bd0357e8404e4801983e67"
+192 verbose lastModified Sun, 12 Jan 2020 00:17:07 GMT
+193 http request GET https://registry.npmjs.org/@babel%2fplugin-proposal-do-expressions
+194 verbose request uri https://registry.npmjs.org/@babel%2fcore
+195 verbose request no auth needed
+196 info attempt registry request try #1 at 6:43:17 PM
+197 verbose etag W/"11aa0215d474115ce4a7a860dda7eb50"
+198 verbose lastModified Sun, 12 Jan 2020 00:17:34 GMT
+199 http request GET https://registry.npmjs.org/@babel%2fcore
+200 verbose request uri https://registry.npmjs.org/@babel%2fplugin-proposal-export-default-from
+201 verbose request no auth needed
+202 info attempt registry request try #1 at 6:43:17 PM
+203 verbose etag W/"414472b0bb164341bd6af2b309ded78e"
+204 verbose lastModified Sun, 12 Jan 2020 00:17:08 GMT
+205 http request GET https://registry.npmjs.org/@babel%2fplugin-proposal-export-default-from
+206 verbose request uri https://registry.npmjs.org/@babel%2fplugin-proposal-logical-assignment-operators
+207 verbose request no auth needed
+208 info attempt registry request try #1 at 6:43:17 PM
+209 verbose etag W/"a00131d583ce6d59a1898e3520c84822"
+210 verbose lastModified Sun, 12 Jan 2020 00:17:09 GMT
+211 http request GET https://registry.npmjs.org/@babel%2fplugin-proposal-logical-assignment-operators
+212 verbose request uri https://registry.npmjs.org/@babel%2fplugin-proposal-export-namespace-from
+213 verbose request no auth needed
+214 info attempt registry request try #1 at 6:43:17 PM
+215 verbose etag W/"560dd1cef2baa9e64f49c0c26f528809"
+216 verbose lastModified Sun, 12 Jan 2020 00:17:14 GMT
+217 http request GET https://registry.npmjs.org/@babel%2fplugin-proposal-export-namespace-from
+218 verbose request uri https://registry.npmjs.org/@babel%2fplugin-proposal-json-strings
+219 verbose request no auth needed
+220 info attempt registry request try #1 at 6:43:17 PM
+221 verbose etag W/"49fc217f7355f5fffafcafbb13253365"
+222 verbose lastModified Sun, 12 Jan 2020 00:17:04 GMT
+223 http request GET https://registry.npmjs.org/@babel%2fplugin-proposal-json-strings
+224 verbose request uri https://registry.npmjs.org/@babel%2fplugin-proposal-function-sent
+225 verbose request no auth needed
+226 info attempt registry request try #1 at 6:43:17 PM
+227 verbose etag W/"96f98fdb52174e48639973309d344166"
+228 verbose lastModified Sun, 12 Jan 2020 00:17:43 GMT
+229 http request GET https://registry.npmjs.org/@babel%2fplugin-proposal-function-sent
+230 verbose request uri https://registry.npmjs.org/@babel%2fplugin-proposal-function-bind
+231 verbose request no auth needed
+232 info attempt registry request try #1 at 6:43:17 PM
+233 verbose etag W/"c2a7c8b251f46054454faf3aab2c432c"
+234 verbose lastModified Sun, 12 Jan 2020 00:17:03 GMT
+235 http request GET https://registry.npmjs.org/@babel%2fplugin-proposal-function-bind
+236 verbose request uri https://registry.npmjs.org/@babel%2fplugin-proposal-optional-chaining
+237 verbose request no auth needed
+238 info attempt registry request try #1 at 6:43:17 PM
+239 verbose etag W/"0b6826d4c3909deee53d81f2145e0456"
+240 verbose lastModified Sun, 12 Jan 2020 00:17:11 GMT
+241 http request GET https://registry.npmjs.org/@babel%2fplugin-proposal-optional-chaining
+242 verbose request uri https://registry.npmjs.org/@babel%2fplugin-syntax-dynamic-import
+243 verbose request no auth needed
+244 info attempt registry request try #1 at 6:43:17 PM
+245 verbose etag W/"86c6c737b25e39f886d8ffb906c85f62"
+246 verbose lastModified Sun, 12 Jan 2020 00:16:23 GMT
+247 http request GET https://registry.npmjs.org/@babel%2fplugin-syntax-dynamic-import
+248 verbose get https://registry.npmjs.org/@babel%2fplugin-proposal-throw-expressions not expired, no request
+249 verbose stack Error: Missing required argument #1
+249 verbose stack     at andLogAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:31:3)
+249 verbose stack     at fetchPackageMetadata (/usr/share/npm/lib/fetch-package-metadata.js:51:22)
+249 verbose stack     at resolveWithNewModule (/usr/share/npm/lib/install/deps.js:456:12)
+249 verbose stack     at /usr/share/npm/lib/install/deps.js:457:7
+249 verbose stack     at /usr/share/npm/node_modules/iferr/index.js:13:50
+249 verbose stack     at /usr/share/npm/lib/fetch-package-metadata.js:37:12
+249 verbose stack     at addRequestedAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:82:5)
+249 verbose stack     at returnAndAddMetadata (/usr/share/npm/lib/fetch-package-metadata.js:117:7)
+249 verbose stack     at pickVersionFromRegistryDocument (/usr/share/npm/lib/fetch-package-metadata.js:134:20)
+249 verbose stack     at /usr/share/npm/node_modules/iferr/index.js:13:50
+250 verbose cwd /home/fel/Projects/vincer/dashboard
+251 error Linux 5.0.0-37-generic
+252 error argv "/usr/bin/node" "/usr/bin/npm" "install"
+253 error node v8.10.0
+254 error npm  v3.5.2
+255 error code EMISSINGARG
+256 error typeerror Error: Missing required argument #1
+256 error typeerror     at andLogAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:31:3)
+256 error typeerror     at fetchPackageMetadata (/usr/share/npm/lib/fetch-package-metadata.js:51:22)
+256 error typeerror     at resolveWithNewModule (/usr/share/npm/lib/install/deps.js:456:12)
+256 error typeerror     at /usr/share/npm/lib/install/deps.js:457:7
+256 error typeerror     at /usr/share/npm/node_modules/iferr/index.js:13:50
+256 error typeerror     at /usr/share/npm/lib/fetch-package-metadata.js:37:12
+256 error typeerror     at addRequestedAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:82:5)
+256 error typeerror     at returnAndAddMetadata (/usr/share/npm/lib/fetch-package-metadata.js:117:7)
+256 error typeerror     at pickVersionFromRegistryDocument (/usr/share/npm/lib/fetch-package-metadata.js:134:20)
+256 error typeerror     at /usr/share/npm/node_modules/iferr/index.js:13:50
+257 error typeerror This is an error with npm itself. Please report this error at:
+257 error typeerror     <http://github.com/npm/npm/issues>
+258 verbose exit [ 1, true ]
