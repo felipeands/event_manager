@@ -31,3 +31,12 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes: 
+      event:
+        event_types:
+          concert: Concert
+          festival: Festival
+        states:
+          enabled: Enabled
+          canceled: Canceled
