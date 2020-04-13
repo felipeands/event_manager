@@ -1,3 +1,101 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+
+/*
+colors pattern
+*/
+$primary: #3ca9ad;
+$clean: #fff;
+$dark: #C7C7C7; 
+
+
+html, body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+}
+
+.btn {
+	padding: 11px 15px 12px;
+	background: $primary;
+	border-radius: 4px;
+	color: $clean;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.12);
+	transition: box-shadow 0.05s ease-in-out, opacity 0.05s ease-in-out;
+	cursor: pointer;
+
+	&:hover {
+		transition: box-shadow 0.15s ease-in-out, opacity 0.15s ease-in-out;
+		text-decoration: none;
+		box-shadow: inset 0 0 2px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.4);
+	}
+
+	&:active {
+		box-shadow: inset 0 2px 4px rgba(0,0,0,0.15), 0 1px 1px rgba(0,0,0,0.4);
+	}
+}
+
+.container {
+	padding: 0 10px;
+}
+
+section {
+	padding: 15px 0;
+}
+
+
+
+
+
+/*
+header bar
+*/
+header {
+	background: $primary;
+	padding: 20px 0;
+	color: $clean;
+}
+
+
+
+
+
+/*
+event filters
+*/
+.filters {
+	.filterOptions {
+		display: flex;
+		justify-content: space-between;	
+		align-items: center;
+
+		.genre {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			&.active {
+				background: $clean;
+				color: $primary;
+
+				.except {
+					visibility: hidden;
+				}
+			}
+
+			.except {
+				border: 1px solid $clean;
+				border-radius: 50%;
+				padding: 0px 5px 2px;
+				margin-left: 10px;
+
+				&.active {
+					background: $clean;
+					color: $primary;
+				}
+			}
+		}
+	}
+}
