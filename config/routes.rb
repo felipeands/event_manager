@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
 		# all the events routes
 		scope :events do
-			post 'create',					to: 'api/events/create'
-			get 'list',						to: 'api/events/list'
+			post 'create',					to: 'api/events#create'
+			get 'list',						to: 'api/events#list'
 		end
 
 	end
