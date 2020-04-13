@@ -32,30 +32,32 @@ export default class EventsApp extends React.Component {
 
     // request new results on filters change
     onToggleGenre = (genre) => {
+        let activeGenres = []
+
         // check if selected genre exists in genres array
         if (this.state.activeGenres.includes(genre)) {
             // remove from selected genres list
-            const activeGenres = this.state.activeGenres.filter((stateGenre) => stateGenre !== genre)
-            this.setState({ activeGenres })
+            activeGenres = this.state.activeGenres.filter((stateGenre) => stateGenre !== genre)
         } else {
             // include selected genre
-            const activeGenres = [... this.state.activeGenres, genre]
-            this.setState({ activeGenres })
+            activeGenres = [... this.state.activeGenres, genre]
         }
+        this.setState({ activeGenres }, this.getApiResults)
     }
 
     // request new results on exceptions change
     onToggleException = (genre) => {
+        let activeExceptions = []
+
         // check if selected genre exists in exceptions array
         if (this.state.activeExceptions.includes(genre)) {
             // remove from exceptions genres list
-            const activeExceptions = this.state.activeExceptions.filter((stateGenre) => stateGenre !== genre)
-            this.setState({ activeExceptions })
+            activeExceptions = this.state.activeExceptions.filter((stateGenre) => stateGenre !== genre)
         } else {
             // include exception genre
-            const activeExceptions = [... this.state.activeExceptions, genre]
-            this.setState({ activeExceptions })
+            activeExceptions = [... this.state.activeExceptions, genre]
         }
+        this.setState({ activeExceptions }, this.getApiResults)
     }
 
     onCloseNewEvent = () => {
@@ -64,13 +66,33 @@ export default class EventsApp extends React.Component {
 
     onFormNewEventSubmit = (data) => {
         this.setState({ isLoading: true })
-        axios.post(`${Config.getApiUrl()}create`, data).then((res) => {
-            this.updateResults(res.data).then(_ => this.setState({ isLoading: false }))
+        axios.post(`${Config.getApiUrl()}create`, data).then(this.getApiResults)
+    }
+
+    getApiResults = () => {
+        this.setState({ isLoading: true })
+
+        // extract ids from genres array
+        const genres = this.state.activeGenres.map((genre) => genre.id)
+
+        // extract ids from artists array
+        const exceptions = this.state.activeExceptions.map((exception) => exception.id)
+
+        // prepara params to api request
+        const params = {
+            genres: genres,
+            exciptions: exceptions
+        }
+
+        axios.post(`${Config.getApiUrl()}list`, { params: params }).then((res) => {
+            this.updateResults(res.data).then(() => this.setState({ isLoading: false }))
         })
     }
 
     updateResults(data) {
-
+        return new Promise((resolve) => {
+            this.setState({ results: data }, resolve)
+        })
     }
 
 
