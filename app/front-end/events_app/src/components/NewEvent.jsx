@@ -196,7 +196,7 @@ export default class NewEvent extends React.Component {
             timeFormat="HH:mm"
             timeIntervals={30}
             timeCaption="time"
-            dateFormat="yyyy-MM-dd h:mm:ss"
+            dateFormat="MMMM d, yyyy h:mm aa"
           />
         </div>
 
