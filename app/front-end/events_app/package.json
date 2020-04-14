@@ -44,7 +44,6 @@
     "date-fns": "^2.8.1",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
-    "moment-timezone": "^0.5.28",
     "raphael": "^2.3.0",
     "react": "^16.11.0",
     "react-datepicker": "^2.10.1",
