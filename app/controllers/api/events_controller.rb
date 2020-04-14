@@ -5,13 +5,17 @@ class Api::EventsController < Api::ApplicationController
 		# start a transaction to prevent save data
 		ActiveRecord::Base.transaction do
 			new_event_params = get_new_event_params()
+
+			# fix react-datetime timezone
+			new_event_params[:begin_at] = DateTime.parse(new_event_params[:begin_at]) - 3.hours
+
 			event = Event.enabled.new(new_event_params)
 			event.save!
 
 			genres_params = get_genres_params[:genres]
 
 			# limit to one artist if event type is concert
-			genres_params = genres_params.first if event.concert?
+			genres_params = [genres_params.first] if event.concert?
 
 			# save event genres 
 			genres_params.each do |genre_id|
@@ -60,12 +64,11 @@ class Api::EventsController < Api::ApplicationController
 			dates << result.begin_at.beginning_of_day unless dates.include?(result.begin_at.beginning_of_day)
 		end
 
-
 		# group results per day
 		organized_results = []
 		dates.each do |date|
 
-			date_events = results.where('begin_at >= ? AND begin_at <= ?', date, date)
+			date_events = results.where('begin_at >= ? AND begin_at <= ?', date, date.end_of_day)
 
 			# get event type, genres and artists
 			events_data = []
@@ -91,7 +94,7 @@ class Api::EventsController < Api::ApplicationController
 
 	private
 	def get_new_event_params
-		params.permit(:name, :location, :begin_at)
+		params.permit(:event_type, :name, :location, :begin_at)
 	end
 
 	def get_genres_params

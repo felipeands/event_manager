@@ -17,8 +17,8 @@ export default class Events extends React.Component {
 
                 {result.events.map((event, eventKey) =>
                   <div key={`event_${eventKey}`} className="event">
-                    <h2>{event.event.name}</h2>
-                    <small>{moment(event.event.begin_at, "YYYY-MM-DD").locale("pt-BR").format("kk:MM A")}</small>
+                    <h2>{event.event.name} <small>{moment(event.event.begin_at, "YYYY-MM-DDTHH:mm:ss").locale("pt-BR").format("kk:mm A")}</small></h2>
+                    
 
                     <div className="genres">
                       Genres:

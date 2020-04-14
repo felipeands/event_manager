@@ -1,5 +1,7 @@
 import React from 'react'
 import find from 'lodash/find'
+import moment from 'moment'
+import DatePicker from 'react-datepicker'
 
 export default class NewEvent extends React.Component {
 
@@ -10,13 +12,15 @@ export default class NewEvent extends React.Component {
       artists: [],
       genres: [],
       formData: {
-        event_type: 'concert',
+        event_type: 'festival',
         name: '',
         begin_at: '',
         location: ''
       },
       selectedArtist: ''
     }
+
+
   }
 
   handleArtistsSelectChange = (selectedOption) => {
@@ -25,7 +29,7 @@ export default class NewEvent extends React.Component {
   }
 
   handleEventTypeSelectChange = (selectedOption) => {
-    if (this.state.artists.length > 0) {
+    if (this.state.artists.length > 1) {
       if (confirm('This change will clear you artists selection. Continue?')) {
         this.clearArtistsSelecion()
       } else {
@@ -49,9 +53,9 @@ export default class NewEvent extends React.Component {
     this.setState({ formData: formData })
   }
 
-  handleBeginAtChange = (event) => {
+  handleBeginAtChange = (date) => {
     let formData = { ... this.state.formData }
-    formData.begin_at = event.target.value
+    formData.begin_at = date
     this.setState({ formData: formData })
   }
 
@@ -87,11 +91,16 @@ export default class NewEvent extends React.Component {
   handleFormSubmit = (el) => {
     el.preventDefault()
 
-    const artists = this.state.artists.map((artist) => artist.id)
-    const genres = this.state.genres.map((genre) => genre.id)
+    // check form validation
+    if (this.canSubmitForm()) {
+      const artists = this.state.artists.map((artist) => artist.id)
+      const genres = this.state.genres.map((genre) => genre.id)
 
-    const data = { ... this.state.formData, artists: artists, genres: genres }
-    this.props.onFormNewEventSubmit(data)
+      const data = { ... this.state.formData, artists: artists, genres: genres }
+      this.props.onFormNewEventSubmit(data)
+    } else {
+      alert('Ops.. Please, fill all the fields!')
+    }
   }
 
   handleRemoveArtist(el, artist) {
@@ -123,6 +132,16 @@ export default class NewEvent extends React.Component {
 
   isArtistSelected() {
     return (this.state.selectedArtist !== '')
+  }
+
+  canSubmitForm = () => {
+    return (
+      this.state.genres.length > 0 &&
+      this.state.artists.length > 0 &&
+      this.state.formData.name !== "" &&
+      this.state.formData.begin_at !== "" &&
+      this.state.formData.location !== ""
+    )
   }
 
 
@@ -162,7 +181,15 @@ export default class NewEvent extends React.Component {
 
         <div className="form-group">
           <label htmlFor="begin_at">Date: </label>
-          <input type="datetime" name="begin_at" id="begin_at" className="form-control" value={this.state.formData.begin_at} onChange={this.handleBeginAtChange} />
+          <DatePicker
+            selected={this.state.formData.begin_at}
+            onChange={this.handleBeginAtChange}
+            showTimeSelect
+            timeFormat="HH:mm"
+            timeIntervals={30}
+            timeCaption="time"
+            dateFormat="yyyy-MM-dd h:mm:ss"
+          />
         </div>
 
         <div className="form-group">
