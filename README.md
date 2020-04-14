@@ -15,9 +15,8 @@ $ rake db:create || rake db:migrate || rake db:seed
 Into project directory `event_manager` run
 $ bundle install
 
-## Front-end dependencies
-
-5. Into front-end application directory `app/front-end/events_app` run
+5. Front-end dependencies (react)
+Into front-end application directory `app/front-end/events_app` run
 $ npm install
 
 ## Build the front-end application
