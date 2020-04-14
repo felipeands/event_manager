@@ -23,6 +23,8 @@ $ npm install
 ## Build the front-end application
 
 6. Into front-end application directory `app/front-end/events_app` run
+$ npm start
+or
 $ npm run build:prod
 
 ## Start rails server
