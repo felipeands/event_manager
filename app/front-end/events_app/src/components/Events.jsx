@@ -18,7 +18,10 @@ export default class Events extends React.Component {
                 {result.events.map((event, eventKey) =>
                   <div key={`event_${eventKey}`} className="event">
                     <h2>{event.event.name} <small>{moment(event.event.begin_at, "YYYY-MM-DDTHH:mm:ss").locale("pt-BR").format("kk:mm A")}</small></h2>
-                    
+
+                    <div className="location">
+                      Location: {event.event.location}
+                    </div>
 
                     <div className="genres">
                       Genres:
@@ -35,10 +38,13 @@ export default class Events extends React.Component {
                         : 'Line up:'
                       }
 
-                      {event.artists.map((artist, artistKey) =>
-                        <div key={`artist_${artistKey}`} className="artist">{artist.name}</div>
-                      )}
+                      <ul>
+                        {event.artists.map((artist, artistKey) =>
+                          <li><div key={`artist_${artistKey}`} className="artist">{artist.name}</div></li>
+                        )}
+                      </ul>
                     </div>
+
                   </div>
                 )}
 

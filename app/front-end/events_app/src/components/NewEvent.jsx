@@ -96,7 +96,12 @@ export default class NewEvent extends React.Component {
       const artists = this.state.artists.map((artist) => artist.id)
       const genres = this.state.genres.map((genre) => genre.id)
 
-      const data = { ... this.state.formData, artists: artists, genres: genres }
+      let formData = { ... this.state.formData }
+
+      // fix the timezone from react-datepicker
+      formData.begin_at = moment(this.state.formData.begin_at).format("YYYY-MM-DD HH:mm:ss")
+
+      const data = { ...formData, artists: artists, genres: genres }
       this.props.onFormNewEventSubmit(data)
     } else {
       alert('Ops.. Please, fill all the fields!')

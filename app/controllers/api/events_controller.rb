@@ -6,9 +6,6 @@ class Api::EventsController < Api::ApplicationController
 		ActiveRecord::Base.transaction do
 			new_event_params = get_new_event_params()
 
-			# fix react-datetime timezone
-			new_event_params[:begin_at] = DateTime.parse(new_event_params[:begin_at]) - 3.hours
-
 			event = Event.enabled.new(new_event_params)
 			event.save!
 
