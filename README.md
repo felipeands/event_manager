@@ -9,28 +9,31 @@ $ git clone git@github.com:felipeands/event_manager.git
 Into project directory `event_manager` run
 $ rake db:create || rake db:migrate || rake db:seed
 
-3. Install dependencies
+## Install dependencies
 
-3. 1. Rails dependencies: 
+4. Rails dependencies: 
 Into project directory `event_manager` run
 $ bundle install
 
-3. 2. Front-end dependencies
-Into front-end application directory `app/front-end/events_app` run
+## Front-end dependencies
+
+5. Into front-end application directory `app/front-end/events_app` run
 $ npm install
 
-3. 3. Build the front-end application
-Into front-end application directory `app/front-end/events_app` run
+## Build the front-end application
+
+7. Into front-end application directory `app/front-end/events_app` run
 $ npm run build:prod
 
-3. Start rails server
-Into project root directory run
+## Start rails server
+
+7. Into project root directory run
 $ rails s
 
-4. Navigating through the application functions
+8. Navigating through the application functions
 Using an updated browser go to the url `http://localhost:3000`
 
-4. 1. The available functions satisfy the project requirements like:
+9. The available functions satisfy the project requirements like:
 - Filter events by genre
 - Filter events with exceptions
 - List events grouped by day
