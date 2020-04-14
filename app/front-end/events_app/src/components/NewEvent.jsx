@@ -11,7 +11,6 @@ export default class NewEvent extends React.Component {
       genres: [],
       formData: {
         event_type: 'concert',
-        genre: '',
         name: '',
         begin_at: '',
         location: ''

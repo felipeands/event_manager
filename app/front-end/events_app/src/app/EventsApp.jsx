@@ -70,7 +70,10 @@ export default class EventsApp extends React.Component {
 
   onFormNewEventSubmit = (data) => {
     this.setState({ isLoading: true })
-    axios.post(`${Config.getApiUrl()}create`, data).then(this.getApiResults)
+    axios.post(`${Config.getApiUrl()}create`, data).then(() => {
+      this.onCloseNewEvent()
+      this.getApiResults()
+    })
   }
 
   getApiResults = () => {
@@ -127,7 +130,7 @@ export default class EventsApp extends React.Component {
                 artists={this.state.artists}
                 onFormNewEventSubmit={this.onFormNewEventSubmit}
                 onCloseNewEvent={this.onCloseNewEvent}
-              />
+                isLoading={this.state.isLoading} />
               :
               <div>
                 <a className="btn new" onClick={this.handlerClickNew}>New event</a>
@@ -137,7 +140,9 @@ export default class EventsApp extends React.Component {
         </section>
 
         <section className="results">
-          <Events results={this.state.results} />
+          <Events
+            results={this.state.results}
+            isLoading={this.state.isLoading} />
         </section>
       </>
     )
