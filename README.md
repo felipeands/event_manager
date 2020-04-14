@@ -11,15 +11,15 @@ $ rake db:create || rake db:migrate || rake db:seed
 
 3. Install dependencies
 
-	+ Rails dependencies: 
+	Rails dependencies: 
 	Into project directory `event_manager` run
 	$ bundle install
 
-	+ Front-end dependencies
+	Front-end dependencies
 	Into front-end application directory `app/front-end/events_app` run
 	$ npm install
 
-	+ Build the front-end application
+	Build the front-end application
 	Into front-end application directory `app/front-end/events_app` run
 	$ npm run build:prod
 
@@ -30,7 +30,7 @@ $ rails s
 5. Navigating through the application functions
 Using an updated browser go to the url `http://localhost:3000`
 
-	+ The available functions satisfy the project requirements like:
+	The available functions satisfy the project requirements like:
 		- Filter events by genre
 		- Filter events with exceptions
 		- List events grouped by day
