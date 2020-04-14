@@ -11,10 +11,10 @@ class Event < ApplicationRecord
 	}
 
 	# relationship between the event and genres
-	has_many :event_genres
-	has_many :genres, through: :event_genres, dependent: :destroy
+	has_many :event_genres, dependent: :destroy
+	has_many :genres, through: :event_genres
 
 	# an event can has one or more artists
-	has_many :event_artists
-	has_many :artists, through: :event_artists, dependent: :destroy
+	has_many :event_artists, dependent: :destroy
+	has_many :artists, through: :event_artists
 end
