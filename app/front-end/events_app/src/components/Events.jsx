@@ -40,7 +40,7 @@ export default class Events extends React.Component {
 
                       <ul>
                         {event.artists.map((artist, artistKey) =>
-                          <li><div key={`artist_${artistKey}`} className="artist">{artist.name}</div></li>
+                          <li key={`artist_${artistKey}`}><div className="artist">{artist.name}</div></li>
                         )}
                       </ul>
                     </div>
