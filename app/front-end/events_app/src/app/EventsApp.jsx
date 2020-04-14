@@ -143,13 +143,15 @@ export default class EventsApp extends React.Component {
           </div>
         </section>
 
-        <section className="results">
-          <div className="container">
-            <Events
-              results={this.state.results}
-              isLoading={this.state.isLoading} />
-          </div>
-        </section>
+        {!this.state.isNewEventOpen &&
+          <section className="results">
+            <div className="container">
+              <Events
+                results={this.state.results}
+                isLoading={this.state.isLoading} />
+            </div>
+          </section>
+        }
       </>
     )
   }

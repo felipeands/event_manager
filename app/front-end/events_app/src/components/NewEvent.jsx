@@ -149,6 +149,8 @@ export default class NewEvent extends React.Component {
     return (
       <div className="new_event_form">
 
+        <h2>New event</h2>
+
         <div className="form-group">
           <label htmlFor="event_type">Event type: </label>
           <select
@@ -182,6 +184,7 @@ export default class NewEvent extends React.Component {
         <div className="form-group">
           <label htmlFor="begin_at">Date: </label>
           <DatePicker
+            className="form-control"
             selected={this.state.formData.begin_at}
             onChange={this.handleBeginAtChange}
             showTimeSelect

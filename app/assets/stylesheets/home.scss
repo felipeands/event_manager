@@ -7,6 +7,7 @@ colors pattern
 $primary: rgb(83, 0, 130);
 $clean: #fff;
 $dark: #C7C7C7; 
+$gray: rgb(245, 245, 245);
 
 
 html, body {
@@ -52,6 +53,11 @@ html, body {
 
 .container {
 	padding: 0 10px;
+
+	@media (min-width: 1000px) {
+		width: 800px;
+		margin: 0 auto;
+	}
 }
 
 section {
@@ -83,12 +89,34 @@ event filters
 		display: flex;
 		justify-content: space-between;	
 		align-items: center;
+		flex-wrap: wrap;
+
+		.label {
+			width: 100%;
+		}
 
 		.genre {
 			position: relative;
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			flex: 1 0 40%;
+			max-width: 40%;
+
+			@media (min-width: 1100px) {
+				flex: 1 0 25%;
+				max-width: 25%;
+			}
+
+			@media (min-width: 1200px) {
+				flex: 1 0 5%;
+				max-width: 10%;
+			}
+
+			@media (min-width: 1400px) {
+				flex: 1 0 5%;
+				max-width: 7%;
+			}
 
 			&.active {
 				background: $clean;
@@ -122,7 +150,8 @@ event filters
 new event form
 */
 .new_event {
-	background: rgb(245, 245, 245);
+	background: $gray;
+	padding: 25px 0;
 
 	.new_event_form {
 		.btns {
@@ -139,9 +168,16 @@ new event form
 
 		.genres {
 			display: flex;
+			flex-wrap: wrap;
 
 			.btn {
 				margin-right: 10px;
+				margin-bottom: 10px;
+				flex: 1 0 30%;
+
+				@media (min-width: 100px) {
+					flex: 1 0 10%;
+				}
 
 				&.active {
 					background: $clean;
@@ -151,6 +187,11 @@ new event form
 		}
 
 		.artists {
+
+			label {
+				display: block;
+			}
+
 			.list {
 				.item {
 					padding: 20px 0;
@@ -165,7 +206,9 @@ new event form
 
 	.dates {
 		.date {
+			background: $gray;
 			border: 1px solid $dark;
+			border-radius: 12px;
 			padding: 20px;
 			margin-bottom: 20px;
 		}
