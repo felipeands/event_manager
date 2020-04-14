@@ -60,6 +60,10 @@ html, body {
 	}
 }
 
+h2 {
+	color: $primary;
+}
+
 section {
 	padding: 15px 0;
 }
@@ -174,9 +178,11 @@ new event form
 				margin-right: 10px;
 				margin-bottom: 10px;
 				flex: 1 0 30%;
+				max-width: 45%;
 
-				@media (min-width: 100px) {
-					flex: 1 0 10%;
+				@media (min-width: 1000px) {
+					flex: 1 0 9%;
+					max-width: 9%;
 				}
 
 				&.active {
@@ -216,10 +222,6 @@ new event form
 
 	.event {
 		margin: 40px 0 60px;
-
-		h2 {
-			color: $primary;
-		}
 
 		small {
 			display: block;
