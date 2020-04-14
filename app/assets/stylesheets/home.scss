@@ -4,7 +4,7 @@
 /*
 colors pattern
 */
-$primary: #3ca9ad;
+$primary: rgb(83, 0, 130);
 $clean: #fff;
 $dark: #C7C7C7; 
 
@@ -122,6 +122,8 @@ event filters
 new event form
 */
 .new_event {
+	background: rgb(245, 245, 245);
+
 	.new_event_form {
 		.btns {
 			margin-top: 30px;
@@ -156,4 +158,46 @@ new event form
 			}
 		}
 	}
+}
+
+
+.results {
+
+	.dates {
+		.date {
+			border: 1px solid $dark;
+			padding: 20px;
+			margin-bottom: 20px;
+		}
+	}
+
+	.event {
+		margin: 40px 0 80px;
+
+		h2 {
+			color: $primary;
+		}
+
+		small {
+			display: block;
+			margin-bottom: 20px;
+		}
+	}
+
+	.genres {
+
+		.items {
+			display: flex;
+			margin-bottom: 20px;
+
+			.genre {
+				background: $primary;
+				color: $clean;
+				border-radius: 12px;
+				padding: 4px 15px;
+				margin-right: 15px;
+			}
+		}
+	}
+
 }

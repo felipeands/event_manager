@@ -24,6 +24,10 @@ export default class EventsApp extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.getApiResults()
+  }
+
   // responsible for display new event form
   handlerClickNew = (el) => {
     el.preventDefault()
@@ -140,9 +144,11 @@ export default class EventsApp extends React.Component {
         </section>
 
         <section className="results">
-          <Events
-            results={this.state.results}
-            isLoading={this.state.isLoading} />
+          <div className="container">
+            <Events
+              results={this.state.results}
+              isLoading={this.state.isLoading} />
+          </div>
         </section>
       </>
     )

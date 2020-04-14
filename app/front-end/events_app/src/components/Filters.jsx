@@ -32,7 +32,7 @@ export default class Filters extends React.Component {
               onClick={(el) => this.handleDisableGenre(el, genre)}
               title="Add to exceptions list">
               x
-                        </a>
+            </a>
           </div>
         )}
 

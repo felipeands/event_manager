@@ -64,9 +64,22 @@ class Api::EventsController < Api::ApplicationController
 		# group results per day
 		organized_results = []
 		dates.each do |date|
+
+			date_events = results.where('begin_at >= ? AND begin_at <= ?', date, date)
+
+			# get event type, genres and artists
+			events_data = []
+			date_events.each do |event|
+				events_data << {
+					event: event,
+					genres: event.genres,
+					artists: event.artists
+				}
+			end
+
 			organized_results << {
 				date: date,
-				events: results.where('begin_at >= ? AND begin_at <= ?', date, date)
+				events: events_data
 			}
 		end
 
