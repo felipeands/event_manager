@@ -2,12 +2,9 @@ module Api::EventsHelper
 
 	# format data for api events grouped by day
 	def format_for_api_dates_list(events)
-		dates = []
-		
-		events.each do |event|
-			# filter dates in events results
-			dates << event.begin_at.beginning_of_day unless dates.include?(event.begin_at.beginning_of_day)
-		end
+
+		# get dates in events results
+		dates = get_events_dates(events)
 
 		# group events per day
 		formatted_events = []
@@ -34,6 +31,18 @@ module Api::EventsHelper
 
 		# return formatted data
 		formatted_events
+	end
+
+
+	# get dates from events
+	def get_events_dates(events)
+		dates = []
+		
+		events.each do |event|
+			dates << event.begin_at.beginning_of_day unless dates.include?(event.begin_at.beginning_of_day)
+		end
+
+		dates
 	end
 
 end
