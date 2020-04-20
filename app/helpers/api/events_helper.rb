@@ -30,6 +30,8 @@ module Api::EventsHelper
 				events: events_data
 			}
 		end
+
+		# return formatted data
 		formatted_events
 	end
 
