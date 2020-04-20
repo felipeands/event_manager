@@ -33,7 +33,7 @@ class Event < ApplicationRecord
 
 	# filter events of day
 	def self.get_day_events(date)
-		where('begin_at >= ? AND begin_at <= ?', date, date.end_of_day)
+		where('begin_at >= ? AND begin_at <= ?', date.beginning_of_day, date.end_of_day)
 	end
-	
+
 end

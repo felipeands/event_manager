@@ -5,6 +5,7 @@ module Api::EventsHelper
 		dates = []
 		
 		events.each do |event|
+			# filter dates in events results
 			dates << event.begin_at.beginning_of_day unless dates.include?(event.begin_at.beginning_of_day)
 		end
 
