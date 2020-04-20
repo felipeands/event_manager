@@ -17,4 +17,23 @@ class Event < ApplicationRecord
 	# an event can has one or more artists
 	has_many :event_artists, dependent: :destroy
 	has_many :artists, through: :event_artists
+
+
+	# return only events in genres array
+	def self.filter_by_genres(genres_ids)
+		joins(:genres)
+		where(genres: {id: genres_ids})
+	end
+
+	# filter events present in genres exceptions array
+	def self.filter_exceptions_by_genres(genres_ids)
+		exceptions = EventGenre.get_events_by_genres(genres_ids)
+		where.not(id: exceptions)
+	end
+
+	# filter events of day
+	def self.get_day_events(date)
+		where('begin_at >= ? AND begin_at <= ?', date, date.end_of_day)
+	end
+	
 end
