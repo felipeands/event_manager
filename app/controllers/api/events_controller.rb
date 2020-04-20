@@ -9,9 +9,8 @@ class Api::EventsController < Api::ApplicationController
 			new_event_params = get_new_event_params()
 
 			# create new event from params
-			event = Event.enabled.new(new_event_params)
-			event.save!
-
+			event = Event.enabled.create(new_event_params)
+			
 
 			# limit to one artist if event type is concert
 			genres_params = get_genres_params[:genres]
