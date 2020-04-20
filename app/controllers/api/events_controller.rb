@@ -8,13 +8,15 @@ class Api::EventsController < Api::ApplicationController
 		ActiveRecord::Base.transaction do
 			new_event_params = get_new_event_params()
 
+			# create new event from params
 			event = Event.enabled.new(new_event_params)
 			event.save!
 
-			genres_params = get_genres_params[:genres]
 
 			# limit to one artist if event type is concert
+			genres_params = get_genres_params[:genres]
 			genres_params = [genres_params.first] if event.concert?
+
 
 			# save event genres 
 			genres_params.each do |genre_id|
@@ -22,16 +24,16 @@ class Api::EventsController < Api::ApplicationController
 				event.event_genres.create(genre: genre) if genre.present?
 			end if genres_params.present?
 
-			artists_params = get_artists_params[:artists]
 
 			# save event artists
+			artists_params = get_artists_params[:artists]
 			artists_params.each do |artist_id|
 				artist = Artist.find_by_id(artist_id)
 				event.event_artists.create(artist: artist) if artist.present?
 			end if artists_params.present?
 		end
 
-		return render json: {msg: 'Success'}
+		render json: {msg: 'Success'}
 	end
 
 
