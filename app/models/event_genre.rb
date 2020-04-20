@@ -4,7 +4,7 @@ class EventGenre < ApplicationRecord
 
 	# get event ids filter by genre ids
 	def self.get_events_by_genres(genres_ids)
-		self.where(genre: genres_ids).select(:event_id)
+		where(genre: genres_ids).select(:event_id)
 	end
 	
 end

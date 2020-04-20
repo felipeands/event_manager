@@ -14,14 +14,7 @@ module Api::EventsHelper
 			date_events = events.get_day_events(date)
 
 			# get event type, genres and artists
-			events_data = []
-			date_events.each do |event|
-				events_data << {
-					event: event,
-					genres: event.genres,
-					artists: event.artists
-				}
-			end
+			events_data = get_events_genres_and_artists(date_events)
 
 			formatted_events << {
 				date: date,
@@ -43,6 +36,20 @@ module Api::EventsHelper
 		end
 
 		dates
+	end
+
+	# return array of events with genres and artists
+	def get_events_genres_and_artists(events)
+		events_data = []
+		events.each do |event|
+			events_data << {
+				event: event,
+				genres: event.genres,
+				artists: event.artists
+			}
+		end
+
+		events_data
 	end
 
 end

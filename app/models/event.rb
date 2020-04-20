@@ -21,8 +21,7 @@ class Event < ApplicationRecord
 
 	# return only events in genres array
 	def self.filter_by_genres(genres_ids)
-		joins(:genres)
-		where(genres: {id: genres_ids})
+		joins(:genres).where(genres: {id: genres_ids})
 	end
 
 	# filter events present in genres exceptions array
